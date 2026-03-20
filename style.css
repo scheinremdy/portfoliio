@@ -1,8 +1,21 @@
+:root {
+  --bg: #ffffff;
+  --text: #222;
+  --card: #f9f9f9;
+}
+
+body.dark {
+  --bg: #0f172a;
+  --text: #e5e7eb;
+  --card: #1e293b;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: system-ui, sans-serif;
   margin: 0;
-  background: white;
-  color: #222;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s;
 }
 
 header {
@@ -11,23 +24,71 @@ header {
   border-bottom: 1px solid #ddd;
 }
 
-.lang-switch button {
-  margin: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
+.controls {
+  margin-top: 10px;
 }
 
-section {
-  max-width: 700px;
+button {
+  margin: 5px;
+  padding: 6px 12px;
+  cursor: pointer;
+  border: none;
+  background: #ddd;
+  border-radius: 6px;
+}
+
+main {
+  max-width: 900px;
   margin: auto;
   padding: 20px;
 }
 
-.project {
-  margin-top: 15px;
+h2 {
+  margin-top: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 a {
-  color: #0a58ca;
   text-decoration: none;
+  font-weight: bold;
+  color: #3b82f6;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  opacity: 0.6;
+}
+
+/* smooth fade */
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s forwards;
+}
+
+.fade:nth-child(2) { animation-delay: 0.2s; }
+.fade:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
