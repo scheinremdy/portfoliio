@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Sunshine Remollo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -11,43 +12,52 @@
 <header>
   <h1>Sunshine Remollo</h1>
 
-  <div class="lang-switch">
-    <button onclick="setLang('en')">EN</button>
-    <button onclick="setLang('de')">DE</button>
-    <button onclick="setLang('zh')">中文</button>
+  <div class="controls">
+    <div class="lang-switch">
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('de')">DE</button>
+      <button onclick="setLang('zh')">中文</button>
+    </div>
+
+    <button onclick="toggleTheme()" id="themeBtn">🌙</button>
   </div>
 </header>
 
-<section>
+<main>
+
+<section class="fade">
   <p id="about"></p>
 </section>
 
-<section>
+<section class="fade">
   <h2 id="projects-title"></h2>
 
-  <div class="project">
-    <h3>Eco-Friendly Route Planner</h3>
-    <a href="https://github.com/scheinremdy/Eco-Friendly-Route-Planner" target="_blank">GitHub</a>
-  </div>
+  <div class="grid">
 
-  <div class="project">
-    <h3>Weather App</h3>
-    <a href="https://github.com/scheinremdy/weather2.2" target="_blank">GitHub</a>
-  </div>
+    <div class="card">
+      <h3>Eco-Friendly Route Planner</h3>
+      <a href="https://github.com/scheinremdy/Eco-Friendly-Route-Planner" target="_blank">GitHub →</a>
+    </div>
 
-  <div class="project">
-    <h3>Energy Consumption</h3>
-    <a href="https://github.com/scheinremdy/energy-consumption" target="_blank">GitHub</a>
-  </div>
+    <div class="card">
+      <h3>Weather App</h3>
+      <a href="https://github.com/scheinremdy/weather2.2" target="_blank">GitHub →</a>
+    </div>
 
-  <div class="project">
-    <h3>IoT Energy Monitor</h3>
-    <a href="https://github.com/scheinremdy/Iot-Based-Energy-Monitor" target="_blank">GitHub</a>
-  </div>
+    <div class="card">
+      <h3>Energy Consumption</h3>
+      <a href="https://github.com/scheinremdy/energy-consumption" target="_blank">GitHub →</a>
+    </div>
 
+    <div class="card">
+      <h3>IoT Energy Monitor</h3>
+      <a href="https://github.com/scheinremdy/Iot-Based-Energy-Monitor" target="_blank">GitHub →</a>
+    </div>
+
+  </div>
 </section>
 
-<section>
+<section class="fade">
   <h2 id="contact-title"></h2>
   <p>
     <a href="mailto:remollosunshine.de@gmail.com">
@@ -55,6 +65,12 @@
     </a>
   </p>
 </section>
+
+</main>
+
+<footer>
+  <p>© 2026</p>
+</footer>
 
 <script src="script.js"></script>
 
