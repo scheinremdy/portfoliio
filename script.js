@@ -1,44 +1,35 @@
 const content = {
   en: {
-    about: "I am a 21-year-old self-taught digital learner. I started learning coding at 19 because I believe technology plays a major role in the future of the world. This portfolio contains some of my early projects as I continue to improve.",
     projects: "Projects",
-    contact: "Contact"
+    proj1: "A routing concept focused on sustainable mobility. Built using JavaScript logic for decision-making and user input handling.",
+    proj2: "Displays real-time weather data using API integration. Focused on asynchronous JavaScript and data fetching.",
+    proj3: "A system to visualize electricity usage, emphasizing structured data and user-friendly presentation.",
+    proj4: "An IoT-based concept exploring energy monitoring and data flow between systems."
   },
 
   de: {
-    about: "Ich bin eine 21-jährige autodidaktische digitale Lernende. Mit 19 habe ich begonnen, Programmieren zu lernen, weil ich glaube, dass Technologie eine wichtige Rolle in der Zukunft spielt. Dieses Portfolio zeigt einige meiner ersten Projekte.",
     projects: "Projekte",
-    contact: "Kontakt"
+    proj1: "Ein Routing-Konzept für nachhaltige Mobilität. Entwickelt mit JavaScript-Logik zur Entscheidungsfindung.",
+    proj2: "Zeigt Wetterdaten in Echtzeit durch API-Integration. Fokus auf asynchrone Datenverarbeitung.",
+    proj3: "Ein System zur Visualisierung von Stromverbrauch mit strukturierter Datendarstellung.",
+    proj4: "Ein IoT-Konzept zur Überwachung von Energie und Datenfluss zwischen Systemen."
   },
 
   zh: {
-    about: "我是一名21岁的自学数字学习者。我从19岁开始学习编程，因为我认为科技在未来世界中非常重要。这个作品集展示了我的一些早期项目。",
     projects: "项目",
-    contact: "联系"
+    proj1: "一个专注于可持续交通的路线规划概念，使用JavaScript处理逻辑和用户输入。",
+    proj2: "通过API获取实时天气数据，重点是异步数据处理。",
+    proj3: "一个用于电力消耗可视化的系统，强调数据结构和界面设计。",
+    proj4: "一个基于物联网的能源监控概念，关注数据流和系统交互。"
   }
 };
 
 function setLang(lang) {
-  localStorage.setItem("lang", lang);
-  document.getElementById("about").innerText = content[lang].about;
   document.getElementById("projects-title").innerText = content[lang].projects;
-  document.getElementById("contact-title").innerText = content[lang].contact;
+  document.getElementById("proj1").innerText = content[lang].proj1;
+  document.getElementById("proj2").innerText = content[lang].proj2;
+  document.getElementById("proj3").innerText = content[lang].proj3;
+  document.getElementById("proj4").innerText = content[lang].proj4;
 }
 
-// theme toggle
-function toggleTheme() {
-  document.body.classList.toggle("dark");
-  localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
-}
-
-// load saved settings
-window.onload = () => {
-  const savedLang = localStorage.getItem("lang") || "en";
-  const savedTheme = localStorage.getItem("theme");
-
-  setLang(savedLang);
-
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark");
-  }
-};
+setLang('en');
